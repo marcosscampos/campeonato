@@ -17,7 +17,7 @@ namespace Campeonato.Domain.Entities
         public int QuantidadeDeGols { get; set; }
 
         //Foreing Key
-
+        [Display(Name = "Id da partida")]
         public long DepartureId { get; set; }
 
         [ForeignKey(nameof(DepartureId))]

@@ -45,7 +45,8 @@ namespace Campeonato.Client.Controllers
             var team = new Team
             {
                 Nome = vm.Nome,
-                QuantidadeDeGols = vm.QuantidadeDeGols
+                QuantidadeDeGols = vm.QuantidadeDeGols,
+                DepartureId = vm.DepartureId
             };
 
             await _api.Insert<Team>("team", team);
@@ -61,23 +62,23 @@ namespace Campeonato.Client.Controllers
             return View(team);
         }
 
-        [HttpGet("{id:long}/edit")]
-        public async Task<IActionResult> Edit(long id)
-        {
-            var team = await _api.GetById<Team>($"team/{id}");
+        //[HttpGet("{id:long}/edit")]
+        //public async Task<IActionResult> Edit(long id)
+        //{
+        //    var team = await _api.GetById<Team>($"team/{id}");
 
-            return View(team);
-        }
+        //    return View(team);
+        //}
 
-        [HttpPost("{id:long}/edit")]
-        public async Task<IActionResult> Edit(long id, CreateTeamViewModel vm)
-        {
-            if (!ModelState.IsValid) return View(vm);
+        //[HttpPost("{id:long}/edit")]
+        //public async Task<IActionResult> Edit(long id, CreateTeamViewModel vm)
+        //{
+        //    if (!ModelState.IsValid) return View(vm);
 
-            await _api.Update<Team>($"team/{id}", vm);
+        //    await _api.Update<Team>($"team/{id}", vm);
 
-            return RedirectToAction(nameof(Details), new { id });
-        }
+        //    return RedirectToAction(nameof(Details), new { id });
+        //}
 
         [HttpGet("{id:long}/delete")]
         public async Task<IActionResult> Remove(long id)

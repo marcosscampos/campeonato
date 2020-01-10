@@ -67,7 +67,7 @@ namespace Campeonato.API.Controllers
         }
 
         [HttpDelete("{id:long}")]
-        public async Task<IActionResult> Delete(long id)
+        public async Task<IActionResult> Remove(long id)
         {
             await _departuresRepository.Remove(id);
 

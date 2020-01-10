@@ -35,7 +35,7 @@ namespace Campeonato.Infra.Repositories
         public async Task<Team> GetById(long id)
         {
             return await _context.Teams
-                .Include(t => t.Nome)
+                .Include(t => t.Departure)
                 .FirstOrDefaultAsync(t => t.Id == id);
         }
 

@@ -9,6 +9,8 @@ namespace Campeonato.Domain.Entities
     public class Departure : Entity
     {
         public Departure() => Teams = new HashSet<Team>();
+
+        [Display(Name = "Times")]
         public ICollection<Team> Teams { get; set; }
 
         //Classes
