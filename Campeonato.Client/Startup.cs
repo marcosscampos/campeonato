@@ -50,7 +50,7 @@ namespace Campeonato.Client
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Teams}/{action=Index}/{id?}");
             });
         }
     }
